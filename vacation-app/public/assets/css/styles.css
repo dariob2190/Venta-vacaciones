@@ -1,0 +1,307 @@
+/* Google Fonts */
+@import url("https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Montserrat:wght@300;400;500;600&display=swap");
+
+:root {
+    --primary-color: #1a252f; /* Midnight Blue */
+    --secondary-color: #2c3e50;
+    --accent-color: #d4af37; /* Luxury Gold */
+    --accent-hover: #b4932a;
+    --text-main: #2b2b2b;
+    --text-light: #6c757d;
+    --bg-light: #f9f9f9; /* Off-white porcelain */
+    --white: #ffffff;
+
+    --shadow-soft: 0 10px 30px rgba(0, 0, 0, 0.05);
+    --shadow-hover: 0 20px 40px rgba(0, 0, 0, 0.1);
+    --glass-bg: rgba(255, 255, 255, 0.95);
+    --glass-border: 1px solid rgba(255, 255, 255, 0.2);
+
+    --radius-lg: 4px; /* Sharper, more elegant corners */
+    --radius-sm: 2px;
+}
+
+/* Bootstrap Overrides */
+.bg-primary {
+    background-color: var(--primary-color) !important;
+    color: #ffffff !important;
+}
+
+.bg-primary a:not(.btn),
+.bg-primary .text-muted {
+    color: rgba(255, 255, 255, 0.8) !important;
+}
+
+.bg-primary a:not(.btn):hover {
+    color: var(--accent-color) !important;
+}
+
+.bg-primary h1,
+.bg-primary h2,
+.bg-primary h3,
+.bg-primary h4,
+.bg-primary h5,
+.bg-primary h6 {
+    color: #ffffff !important;
+}
+
+.text-primary {
+    color: var(--primary-color) !important;
+}
+
+body {
+    font-family: "Montserrat", sans-serif;
+    color: var(--text-main);
+    background-color: var(--bg-light);
+    line-height: 1.7;
+    -webkit-font-smoothing: antialiased;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: "Playfair Display", serif;
+    color: var(--primary-color);
+    font-weight: 700;
+}
+
+a {
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+/* Navbar */
+.navbar {
+    background-color: var(--primary-color) !important;
+    padding: 1.2rem 0;
+    box-shadow: 0 2px 15px rgba(0, 0, 0, 0.2);
+}
+
+.navbar-brand {
+    font-family: "Playfair Display", serif;
+    font-size: 1.8rem;
+    font-style: italic;
+    color: var(--accent-color) !important;
+    letter-spacing: 1px;
+}
+
+.navbar .nav-link {
+    color: rgba(255, 255, 255, 0.8) !important;
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-weight: 500;
+    padding: 0.5rem 1rem !important;
+}
+
+.navbar .nav-link:hover,
+.navbar .nav-link.active {
+    color: var(--accent-color) !important;
+}
+
+/* Custom styling for Admin Tabs */
+.nav-pills .nav-link {
+    color: var(--primary-color);
+    font-weight: 600;
+}
+
+.nav-pills .nav-link.active {
+    background-color: var(--primary-color);
+    color: var(--accent-color);
+}
+
+/* Buttons */
+.btn {
+    border-radius: 0; /* Elegant sharp edges */
+    padding: 0.8rem 2rem;
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    font-weight: 600;
+    transition: all 0.4s ease;
+}
+
+.btn-primary {
+    background-color: var(--primary-color);
+    border: 1px solid var(--primary-color);
+    color: var(--accent-color);
+}
+
+.btn-primary:hover {
+    background-color: transparent;
+    color: var(--primary-color);
+    border-color: var(--primary-color);
+}
+
+.btn-luxury {
+    background-color: var(--accent-color);
+    color: #fff;
+    border: none;
+}
+
+.btn-luxury:hover {
+    background-color: var(--accent-hover);
+    color: #fff;
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(212, 175, 55, 0.3);
+}
+
+.btn-outline-luxury {
+    border: 1px solid var(--accent-color);
+    color: var(--accent-color);
+    background: transparent;
+}
+
+.btn-outline-luxury:hover {
+    background: var(--accent-color);
+    color: #fff;
+}
+
+/* Hero Section */
+.hero-section {
+    position: relative;
+    height: 70vh;
+    background:
+        linear-gradient(rgba(26, 37, 47, 0.4), rgba(26, 37, 47, 0.6)),
+        url("https://images.unsplash.com/photo-1542314831-068cd1dbfeeb?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80");
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed; /* Parallax */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: #fff;
+    margin-bottom: 4rem;
+}
+
+.hero-content h1 {
+    font-size: 4rem;
+    color: #fff;
+    margin-bottom: 1rem;
+    text-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+}
+
+.hero-content p {
+    font-size: 1.2rem;
+    font-weight: 300;
+    letter-spacing: 1px;
+    margin-bottom: 2rem;
+}
+
+/* Cards */
+.card-luxury {
+    background: #fff;
+    border: none;
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-soft);
+    transition: all 0.4s ease;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.card-luxury:hover {
+    transform: translateY(-10px);
+    box-shadow: var(--shadow-hover);
+}
+
+.card-img-wrapper {
+    overflow: hidden;
+    position: relative;
+    height: 250px;
+    border-top-left-radius: var(--radius-lg);
+    border-top-right-radius: var(--radius-lg);
+}
+
+.card-img-top {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.6s ease;
+}
+
+.card-luxury:hover .card-img-top {
+    transform: scale(1.1);
+}
+
+.card-body {
+    padding: 2rem;
+}
+
+.card-title {
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
+}
+
+.card-meta {
+    font-size: 0.8rem;
+    color: var(--accent-color);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 1rem;
+    display: block;
+    font-weight: 600;
+}
+
+.price-tag {
+    font-family: "Playfair Display", serif;
+    font-size: 1.8rem;
+    color: var(--primary-color);
+    font-style: italic;
+}
+
+/* Detail Page */
+.detail-header {
+    height: 50vh;
+    background-size: cover;
+    background-position: center;
+    position: relative;
+    margin-bottom: -100px; /* Overlap effect */
+}
+
+.detail-content {
+    background: #fff;
+    padding: 3rem;
+    box-shadow: var(--shadow-soft);
+    border-radius: var(--radius-lg);
+    position: relative;
+    z-index: 10;
+}
+
+/* Form Controls */
+.form-control,
+.form-select {
+    border: 1px solid #e0e0e0;
+    padding: 1rem;
+    border-radius: 0;
+    font-size: 0.9rem;
+    background-color: #fcfcfc;
+}
+
+.form-control:focus,
+.form-select:focus {
+    box-shadow: none;
+    border-color: var(--primary-color);
+    background-color: #fff;
+}
+
+/* Footer */
+footer {
+    background-color: var(--primary-color);
+    color: #fff;
+    padding: 4rem 0 2rem;
+    margin-top: 5rem;
+}
+
+footer a {
+    color: var(--accent-color);
+}
+
+/* Main Content Spacing for Fixed Navbar */
+.main-content {
+    padding-top: 120px;
+    min-height: 80vh;
+}

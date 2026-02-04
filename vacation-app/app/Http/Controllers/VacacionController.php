@@ -12,23 +12,8 @@ class VacacionController extends Controller
     {
         $query = Vacacion::with(['tipo', 'fotos']);
 
-        if ($request->has('titulo') && $request->titulo != '') {
-            $query->where('titulo', 'like', '%' . $request->titulo . '%');
-        }
-
-        if ($request->has('pais') && $request->pais != '') {
-             $query->where('pais', 'like', '%' . $request->pais . '%');
-        }
-
         if ($request->has('id_tipo') && $request->id_tipo != '') {
             $query->where('id_tipo', $request->id_tipo);
-        }
-
-        if ($request->has('precio_min') && $request->precio_min != '') {
-            $query->where('precio_por_persona', '>=', $request->precio_min);
-        }
-        if ($request->has('precio_max') && $request->precio_max != '') {
-            $query->where('precio_por_persona', '<=', $request->precio_max);
         }
 
         $vacacions = $query->paginate(9);

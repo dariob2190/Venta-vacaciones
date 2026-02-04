@@ -41,7 +41,6 @@ class VacacionController extends Controller
     {
         $vacacion = Vacacion::with(['tipo', 'fotos', 'comentarios.user'])->findOrFail($id);
         
-        // Check if user has reserved this vacation (for showing/hiding comment form)
         $hasReserved = false;
         if (auth()->check()) {
             $hasReserved = \App\Models\Reserva::where('id_user', auth()->id())
@@ -58,7 +57,6 @@ class VacacionController extends Controller
         return view('vacaciones.show', compact('vacacion', 'hasReserved', 'related_vacations'));
     }
 
-    // Admin Methods
 
     public function adminIndex()
     {

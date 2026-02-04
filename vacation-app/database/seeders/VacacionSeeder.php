@@ -27,7 +27,6 @@ class VacacionSeeder extends Seeder
                 'duracion_dias' => 7,
                 'itinerario' => "Day 1: Arrival by seaplane.\nDay 2: Snorkeling safari.\nDay 3: Sunset cruise.\nDay 4: Spa day.\nDay 5: Private beach dinner.\nDay 6: Leisure time.\nDay 7: Departure."
             ]);
-            Foto::create(['id_vacacion' => $v->id, 'ruta' => 'https://images.unsplash.com/photo-1514282401047-d79a71a590e8?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80']);
         }
 
         if ($romantico) {
@@ -41,7 +40,6 @@ class VacacionSeeder extends Seeder
                 'duracion_dias' => 5,
                 'itinerario' => "Day 1: Arrival and check-in.\nDay 2: Wine tasting tour.\nDay 3: Sunset catamaran cruise.\nDay 4: Exploration of Fira.\nDay 5: Departure."
             ]);
-            Foto::create(['id_vacacion' => $v->id, 'ruta' => 'https://images.unsplash.com/photo-1570077188670-e3a8d69ac5ff?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80']);
         }
 
         if ($urbano) {
@@ -55,7 +53,6 @@ class VacacionSeeder extends Seeder
                 'duracion_dias' => 6,
                 'itinerario' => "Day 1: Arrival in Kyoto.\nDay 2: Kinkaku-ji and bamboo forest.\nDay 3: Tea ceremony.\nDay 4: Fushimi Inari Taisha.\nDay 5: Nara day trip.\nDay 6: Departure."
             ]);
-            Foto::create(['id_vacacion' => $v->id, 'ruta' => 'https://images.unsplash.com/photo-1493976040374-85c8e12f0c0e?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80']);
         }
 
         if ($urbano) {
@@ -69,7 +66,6 @@ class VacacionSeeder extends Seeder
                 'duracion_dias' => 4,
                 'itinerario' => "Day 1: Arrival and welcome dinner.\nDay 2: Louvre Museum private tour.\nDay 3: Seine river cruise.\nDay 4: Departure."
             ]);
-            Foto::create(['id_vacacion' => $v->id, 'ruta' => 'https://images.unsplash.com/photo-1502602898657-3e91760cbb34?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80']);
         }
         
         if ($aventura) {
@@ -83,7 +79,6 @@ class VacacionSeeder extends Seeder
                 'duracion_dias' => 7,
                 'itinerario' => "Day 1: Arrival and equipment fitting.\nDay 2: Skiing lessons.\nDay 3: Full day skiing.\nDay 4: Spa relaxation.\nDay 5: Snowmobile tour.\nDay 6: Apres-ski party.\nDay 7: Departure."
             ]);
-            Foto::create(['id_vacacion' => $v->id, 'ruta' => 'https://images.unsplash.com/photo-1516949363658-525be46a67f1?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80']);
         }
 
         if ($lujo) {
@@ -97,7 +92,6 @@ class VacacionSeeder extends Seeder
                'duracion_dias' => 5,
                'itinerario' => "Day 1: Arrival and Burj Khalifa visit.\nDay 2: Desert safari.\nDay 3: Yacht cruise.\nDay 4: Gold Souk shopping.\nDay 5: Departure."
            ]);
-           Foto::create(['id_vacacion' => $v->id, 'ruta' => 'https://images.unsplash.com/photo-1512453979798-5ea90b2009f4?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80']);
        }
     }
 }

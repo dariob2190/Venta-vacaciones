@@ -89,7 +89,7 @@ class VacacionController extends Controller
         $vacacion = Vacacion::create($request->except('foto'));
 
         if ($request->hasFile('foto')) {
-            $path = $request->file('foto')->store('vacaciones', 'private');
+            $path = $request->file('foto')->store('vacaciones', 'public');
             \App\Models\Foto::create([
                 'id_vacacion' => $vacacion->id,
                 'ruta' => $path
@@ -130,13 +130,14 @@ class VacacionController extends Controller
         }
 
         if ($request->hasFile('foto')) {
-            $path = $request->file('foto')->store('vacaciones', 'private');
+            $path = $request->file('foto')->store('vacaciones', 'public');
+            
             \App\Models\Foto::create([
                 'id_vacacion' => $vacacion->id,
                 'ruta' => $path
             ]);
         }
-
+        
         return redirect()->route('vacaciones.admin_index')->with('success', 'Experience updated successfully.');
     }
 

@@ -40,3 +40,4 @@ Route::middleware(['auth'])->group(function () {
         Route::delete('/vacaciones/{id}', [VacacionController::class, 'destroy'])->name('vacaciones.destroy');
     });
 });
+

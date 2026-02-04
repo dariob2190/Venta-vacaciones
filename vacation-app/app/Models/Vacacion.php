@@ -47,9 +47,7 @@ class Vacacion extends Model
         $foto = $this->fotos->first();
         
         if (!$foto) {
-        if (!$foto) {
             return 'https://placehold.co/800x600?text=No+Image';
-        }
         }
 
         // Check if file exists in storage, if not return placeholder

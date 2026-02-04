@@ -86,14 +86,15 @@ class VacacionController extends Controller
             'foto' => 'nullable|image|mimes:jpeg,png,jpg,gif,webp|max:2048',
         ]);
 
-        $vacacion = new Vacacion($request->except('foto'));
+        $vacacion = Vacacion::create($request->except('foto'));
 
         if ($request->hasFile('foto')) {
             $path = $request->file('foto')->store('vacaciones', 'private');
-            $vacacion->foto = $path;
+            \App\Models\Foto::create([
+                'id_vacacion' => $vacacion->id,
+                'ruta' => $path
+            ]);
         }
-
-        $vacacion->save();
 
         return redirect()->route('vacaciones.admin_index')->with('success', 'Experience created successfully.');
     }
@@ -122,18 +123,19 @@ class VacacionController extends Controller
             'delete_image' => 'nullable|boolean'
         ]);
 
-        $vacacion->fill($request->except(['foto', 'delete_image']));
+        $vacacion->update($request->except(['foto', 'delete_image']));
 
         if ($request->has('delete_image') && $request->delete_image) {
-             $vacacion->foto = null;
+             $vacacion->fotos()->delete();
         }
 
         if ($request->hasFile('foto')) {
             $path = $request->file('foto')->store('vacaciones', 'private');
-            $vacacion->foto = $path;
+            \App\Models\Foto::create([
+                'id_vacacion' => $vacacion->id,
+                'ruta' => $path
+            ]);
         }
-
-        $vacacion->save();
 
         return redirect()->route('vacaciones.admin_index')->with('success', 'Experience updated successfully.');
     }
